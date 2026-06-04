@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | BlueLineNote</title>
-
 <style>
 body {
 margin: 0;
@@ -12,8 +11,6 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 background: #0b1220;
 color: #e5e7eb;
 }
-
-/* subtle background glow */
 body::before {
 content: "";
 position: fixed;
@@ -22,15 +19,11 @@ background: radial-gradient(circle at 20% 10%, rgba(29,78,216,0.25), transparent
 radial-gradient(circle at 80% 90%, rgba(59,130,246,0.15), transparent 50%);
 z-index: -1;
 }
-
-/* container */
 .container {
 max-width: 900px;
 margin: 0 auto;
 padding: 80px 20px;
 }
-
-/* card */
 .card {
 background: rgba(15,23,42,0.75);
 backdrop-filter: blur(14px);
@@ -39,36 +32,31 @@ padding: 44px;
 border: 1px solid rgba(255,255,255,0.08);
 box-shadow: 0 30px 80px rgba(0,0,0,0.6);
 }
-
-/* title */
 h1 {
 margin: 0 0 24px;
 font-size: 2.4rem;
 color: #ffffff;
 }
-
-/* text */
+h2 {
+margin: 0 0 14px;
+font-size: 1.3rem;
+color: #93c5fd;
+}
 p {
 font-size: 1.05rem;
 line-height: 1.75;
 color: #cbd5f5;
 margin-bottom: 18px;
 }
-
-/* highlight */
 .highlight {
 color: #ffffff;
 font-weight: 700;
 }
-
-/* divider */
 .divider {
 height: 1px;
 background: rgba(255,255,255,0.1);
 margin: 30px 0;
 }
-
-/* back button */
 .back-link {
 display: inline-block;
 margin-bottom: 20px;
@@ -76,14 +64,16 @@ text-decoration: none;
 color: #60a5fa;
 font-weight: 700;
 }
-
-/* contact */
+.updated {
+font-size: 0.95rem;
+color: #94a3b8;
+margin-bottom: 26px;
+}
 .contact {
 margin-top: 10px;
 font-weight: 600;
 color: #e5e7eb;
 }
-
 @media (max-width: 600px) {
 .card {
 padding: 28px;
@@ -91,44 +81,66 @@ padding: 28px;
 }
 </style>
 </head>
-
 <body>
-
 <div class="container">
 <div class="card">
-
 <a href="/" class="back-link">← Back to BlueLineNote</a>
-
 <h1>Privacy Policy</h1>
+<p class="updated">Last updated: June 2026</p>
 
-<p>BlueLineNote does not collect, store, or share any personal data.</p>
-
+<h2>Your reports stay on your device</h2>
 <p>
-All information entered into the app remains on the user’s device and is not transmitted to any external server.
-<span class="highlight">The developer does not have access to notes, reports, scans, or any user-generated content.</span>
+All reports, notes, scans, and other content you enter into BlueLineNote remain on your device and are
+<span class="highlight">never transmitted to the developer or any external server.</span>
+The developer does not have access to your notes, reports, scans, or any content you create in the app.
 </p>
-
 <p>
-BlueLineNote does not provide cloud storage, remote databases, or long-term external data retention.
-Users may export or delete their data at any time.
-</p>
-
-<div class="divider"></div>
-
-<p>
-Users are responsible for securing their device and for how they store, manage, and use any information entered into the app.
-</p>
-
-<p>
-The app uses Apple services such as in-app purchases and speech recognition, which are handled by Apple under their own privacy policies.
+BlueLineNote does not provide cloud storage, remote databases, or long-term external retention of your content.
+You may export or delete your data at any time.
 </p>
 
 <div class="divider"></div>
 
-<p class="contact">Contact: support@bluelinenote.app</p>
+<h2>Anonymous usage analytics</h2>
+<p>
+To understand how the app is used and to improve it, BlueLineNote collects a small amount of
+<span class="highlight">anonymous usage data</span> — for example, which features are opened, how long
+the app is used, your subscription type, device model, operating system version, and app version.
+</p>
+<p>
+This usage data is <span class="highlight">not linked to your identity and is not used to track you.</span>
+It contains <span class="highlight">no personal information and none of your report content.</span>
+Each install is identified only by a random, non-identifying value that resets if the app is reinstalled.
+The data is not sold and is not shared with advertisers or other third parties for advertising or tracking.
+</p>
+<p>
+This analytics collection is <span class="highlight">completely optional.</span> You can turn it off at any
+time in the app under <span class="highlight">Backup &amp; Restore → Anonymous Usage.</span> Turning it off
+stops all usage data collection. Your reports remain on your device whether analytics is on or off.
+</p>
 
+<div class="divider"></div>
+
+<h2>Apple services</h2>
+<p>
+The app uses Apple services such as in-app purchases and speech recognition, which are handled by Apple
+under Apple's own privacy policies.
+</p>
+
+<div class="divider"></div>
+
+<h2>Your responsibility</h2>
+<p>
+You are responsible for securing your device and for how you store, manage, and use any information you
+enter into the app. You are also responsible for
+<span class="highlight">following your department's or company's policies, procedures, and applicable laws</span>
+governing the documentation, handling, retention, and sharing of any information you record using BlueLineNote.
+</p>
+
+<div class="divider"></div>
+
+<p class="contact">Contact: <a href="mailto:support@bluelinenote.app" style="color:#60a5fa;text-decoration:none;font-weight:700;">support@bluelinenote.app</a></p>
 </div>
 </div>
-
 </body>
 </html>
