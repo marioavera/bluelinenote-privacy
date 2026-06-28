@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Guide | BlueLineNote</title>
+<style>
+:root {
+  --bg: #0b1220;
+  --card: rgba(15,23,42,0.75);
+  --ink: #e5e7eb;
+  --muted: #94a3b8;
+  --body: #cbd5f5;
+  --accent: #60a5fa;
+  --accent2: #93c5fd;
+  --line: rgba(255,255,255,0.10);
+  --chip: rgba(96,165,250,0.12);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 8%, rgba(29,78,216,0.25), transparent 40%),
+             radial-gradient(circle at 85% 95%, rgba(59,130,246,0.15), transparent 50%);
+  z-index: -1;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 20px 90px;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 34px;
+}
+/* Sticky table of contents */
+nav.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 18px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+}
+nav.toc .brand { font-weight: 800; color:#fff; font-size: 1.05rem; letter-spacing: .3px; }
+nav.toc .brand span { color: var(--accent); }
+nav.toc .tag { color: var(--muted); font-size: .8rem; margin: 4px 0 16px; }
+nav.toc a {
+  display: block;
+  color: var(--body);
+  text-decoration: none;
+  font-size: .9rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border-left: 2px solid transparent;
+}
+nav.toc a:hover { background: var(--chip); color:#fff; border-left-color: var(--accent); }
+nav.toc a.sub { padding-left: 20px; font-size: .84rem; color: var(--muted); }
+nav.toc .grp { margin-top: 12px; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--accent2); padding: 0 8px; }
+
+main { min-width: 0; }
+.card {
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  padding: 40px 42px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.55);
+}
+h1 { font-size: 2.3rem; color:#fff; margin: 0 0 6px; }
+.lede { color: var(--muted); font-size: 1.05rem; margin: 0 0 8px; }
+h2 {
+  color: var(--accent2);
+  font-size: 1.45rem;
+  margin: 40px 0 6px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 20px;
+}
+h2:first-of-type { border-top: none; padding-top: 0; }
+h3 { color:#fff; font-size: 1.12rem; margin: 26px 0 6px; scroll-margin-top: 20px; }
+p { color: var(--body); margin: 10px 0; }
+strong { color:#fff; }
+a { color: var(--accent); }
+.divider { height:1px; background: var(--line); margin: 26px 0; }
+
+/* Step list */
+ol.steps { counter-reset: step; list-style: none; padding: 0; margin: 14px 0; }
+ol.steps > li {
+  counter-increment: step;
+  position: relative;
+  padding: 12px 14px 12px 52px;
+  margin: 8px 0;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--body);
+}
+ol.steps > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 12px; top: 12px;
+  width: 26px; height: 26px;
+  background: var(--accent);
+  color: #06122b;
+  font-weight: 800;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: .9rem;
+}
+ul.plain { margin: 8px 0; padding-left: 20px; }
+ul.plain li { color: var(--body); margin: 5px 0; }
+
+.chip {
+  display: inline-block;
+  background: var(--chip);
+  border: 1px solid rgba(96,165,250,0.35);
+  color: var(--accent2);
+  border-radius: 8px;
+  padding: 1px 8px;
+  font-size: .82rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.tip {
+  border-left: 3px solid var(--accent);
+  background: rgba(96,165,250,0.08);
+  padding: 12px 16px;
+  border-radius: 0 12px 12px 0;
+  margin: 16px 0;
+}
+.tip b { color: var(--accent2); }
+.warn {
+  border-left: 3px solid #f59e0b;
+  background: rgba(245,158,11,0.08);
+  padding: 12px 16px;
+  border-radius: 0 12px 12px 0;
+  margin: 16px 0;
+}
+.warn b { color:#fbbf24; }
+
+details {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4px 16px;
+  margin: 10px 0;
+  background: rgba(255,255,255,0.03);
+}
+details summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 0;
+  list-style: none;
+}
+details summary::-webkit-details-marker { display:none; }
+details summary::before { content: "▸ "; color: var(--accent); }
+details[open] summary::before { content: "▾ "; }
+details .body { padding: 4px 0 12px; color: var(--body); }
+
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .94rem; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--accent2); font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; }
+td:first-child { white-space: nowrap; }
+td .chip { margin: 0; }
+
+.back { display:inline-block; margin-bottom: 14px; color: var(--accent); text-decoration: none; font-weight: 700; }
+footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
+
+@media (max-width: 880px) {
+  .wrap { grid-template-columns: 1fr; }
+  nav.toc { position: static; max-height: none; }
+  .card { padding: 28px 22px; border-radius: 20px; }
+  h1 { font-size: 1.9rem; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="brand">Blue<span>Line</span>Note</div>
+    <div class="tag">User Guide</div>
+    <a href="#overview">Overview</a>
+
+    <div class="grp">Part 1 · The Report</div>
+    <a class="sub" href="#start">Start a crash report</a>
+    <a class="sub" href="#location">Set the location</a>
+    <a class="sub" href="#vehicles">Vehicles &amp; people</a>
+    <a class="sub" href="#impact">Impact &amp; damage</a>
+
+    <div class="grp">Part 2 · V.E.R.A.</div>
+    <a class="sub" href="#vera-what">What V.E.R.A. is</a>
+    <a class="sub" href="#vera-open">Open &amp; the two modes</a>
+    <a class="sub" href="#vera-map">The map &amp; Recenter</a>
+    <a class="sub" href="#vera-sync">Sync vehicles</a>
+    <a class="sub" href="#vera-place">Place &amp; aim vehicles</a>
+    <a class="sub" href="#vera-path">Crash paths</a>
+    <a class="sub" href="#vera-markers">Scene objects</a>
+    <a class="sub" href="#vera-cover">Cover panels</a>
+    <a class="sub" href="#vera-scale">Scale &amp; north</a>
+    <a class="sub" href="#vera-ai">AI draft narrative</a>
+    <a class="sub" href="#vera-output">Save, PNG &amp; GIF</a>
+
+    <div class="grp">Part 3</div>
+    <a class="sub" href="#walkthrough">Full walkthrough</a>
+    <a class="sub" href="#toolref">Tool reference</a>
+    <a class="sub" href="#trouble">Troubleshooting</a>
+  </nav>
+
+  <main>
+  <div class="card">
+    <a class="back" href="/">← Back to BlueLineNote</a>
+    <h1>BlueLineNote User Guide</h1>
+    <p class="lede">From the first crash report to a finished V.E.R.A. reconstruction.</p>
+
+    <h2 id="overview">Overview</h2>
+    <p>
+      BlueLineNote keeps everything on your device. You build a report, capture the scene, and export a
+      PDF — nothing is uploaded to anyone. This guide walks the <strong>Crash</strong> workflow end to end,
+      with the most detail on <strong>V.E.R.A.</strong>, the built-in crash reconstruction tool.
+    </p>
+    <p>
+      The flow is simple: <span class="chip">Build the report</span> → <span class="chip">Open V.E.R.A.</span>
+      → <span class="chip">Reconstruct the scene</span> → <span class="chip">Export the PDF</span>. Each part
+      below follows that order.
+    </p>
+
+    <!-- ============================ PART 1 ============================ -->
+    <h2 id="start">Part 1 · Start a crash report</h2>
+    <ol class="steps">
+      <li>From the dashboard, start a new <strong>Crash</strong> report.</li>
+      <li>Fill the top fields as you normally would: case / complaint number, date, and time.</li>
+      <li>Work down the sections — Location, Vehicles &amp; Pedestrians, narrative, and signatures. You can
+          leave V.E.R.A. for last; it pulls vehicle data from the report automatically.</li>
+    </ol>
+    <p>Everything autosaves as you go. You can close the report and return to it later without losing work.</p>
+
+    <h3 id="location">Set the crash location</h3>
+    <p>The Location section drives the aerial map in V.E.R.A., so set it before you reconstruct. You have three ways:</p>
+    <table>
+      <tr><th>Option</th><th>Use it when…</th></tr>
+      <tr><td><span class="chip">Use Current Location</span></td><td>You're standing at the scene. It reads GPS and fills the address automatically.</td></tr>
+      <tr><td><span class="chip">Drop Pin on Map</span></td><td>You already know the exact latitude/longitude and want to type them in.</td></tr>
+      <tr><td><span class="chip">Load Map from Address</span></td><td>You're <strong>not</strong> at the scene — e.g. a complainant reported a cross street. Type the street or intersection in <em>Street Address / Scene Reference</em>, then tap this. The map loads there so you can drag to the exact spot in V.E.R.A.</td></tr>
+    </table>
+    <div class="tip">
+      <b>You don't have to be perfectly accurate here.</b> When you drag the aerial in V.E.R.A. to the real
+      crash point and save, BlueLineNote updates this location to match — coordinates and address both. So a
+      nearby reference is enough to get started.
+    </div>
+
+    <h3 id="vehicles">Add vehicles &amp; people</h3>
+    <ol class="steps">
+      <li>Open <strong>Vehicles &amp; Pedestrians</strong>. Vehicle 1 is already there; tap
+          <span class="chip">Add Another Vehicle</span> for each additional unit.</li>
+      <li>For each vehicle, fill what you have: vehicle type, plate, and damage notes.</li>
+      <li>Add pedestrians the same way if any were involved.</li>
+    </ol>
+    <p>The labels (Vehicle 1, Vehicle 2…) are what V.E.R.A. uses when it syncs the units onto the canvas, so they carry straight through.</p>
+
+    <h3 id="impact">Mark impact &amp; damage</h3>
+    <p>
+      Each vehicle has an <strong>impact diagram</strong> — a top-down outline of the vehicle. Tap the points
+      on the outline where the vehicle was struck or damaged. This records the points of impact for the report
+      and gives you a quick visual the reconstruction can build on.
+    </p>
+
+    <!-- ============================ PART 2 ============================ -->
+    <h2 id="vera-what">Part 2 · V.E.R.A. crash reconstruction</h2>
+    <p>
+      <strong>V.E.R.A.</strong> turns the crash into a clear, to-scale diagram over a real aerial/street map:
+      vehicle positions, directions of travel, paths, and scene objects. The result embeds into your crash PDF
+      and can be exported as a still image or an animated clip.
+    </p>
+
+    <h3 id="vera-open">Open V.E.R.A. and the two modes</h3>
+    <p>
+      In the crash report, open the <strong>Reconstruction &amp; Narrative</strong> group and tap
+      <span class="chip">Open Crash Reconstruction</span>. The canvas opens with your scene.
+    </p>
+    <p>The toolbar has two working modes — switch with the mode chips:</p>
+    <ul class="plain">
+      <li><span class="chip">Build</span> — add and arrange the scene: vehicles, paths, markers, scale, north.</li>
+      <li><span class="chip">Photo</span> — work with the background map: move it, recenter it, or switch between the live street map and a plain diagram.</li>
+    </ul>
+    <p><span class="chip">Save</span> stays pinned at the bottom in both modes, one tap away.</p>
+
+    <h3 id="vera-map">The background map, Move Map &amp; Recenter</h3>
+    <p>
+      If the report has a location, V.E.R.A. loads a live aerial/street map centered there. In
+      <strong>Photo</strong> mode:
+    </p>
+    <ul class="plain">
+      <li><span class="chip">Move Map</span> — drag the map under the fixed vehicle silhouettes until the real
+          crash spot (e.g. the actual intersection) sits under your scene. Tap it again (<span class="chip">Done</span>) to lock it.</li>
+      <li><span class="chip">Recenter</span> — snaps the map back to the location the report opened with. Use
+          this if you drag too far and lose the crash site, then start panning again from a known point.</li>
+      <li><span class="chip">Diagram / Street Map</span> — toggle between the live map and a plain road
+          diagram when you don't want a photo background.</li>
+    </ul>
+    <div class="tip">
+      <b>Why this matters:</b> when you Move Map to the real crash location and save, the report's GPS and
+      address update to that spot automatically. You reconstruct and fix the location in one motion.
+    </div>
+
+    <h3 id="vera-sync">Sync vehicles from the report</h3>
+    <p>
+      Tap <span class="chip">Sync</span> (Build mode) to pull the vehicles you entered in the crash report
+      onto the canvas as silhouettes — correctly labeled. Do this after you've added your vehicles so you
+      don't place them by hand.
+    </p>
+
+    <h3 id="vera-place">Place vehicles &amp; set direction of travel</h3>
+    <ol class="steps">
+      <li><strong>Drag</strong> each vehicle silhouette to where it ended up on the map.</li>
+      <li><strong>Rotate</strong> it so it faces its direction of travel — the silhouette's heading is what the
+          narrative reads when it describes which way each unit was going.</li>
+      <li>Use <span class="chip">Snap On/Off</span> to toggle grid snapping while you line vehicles up to lanes
+          and edges.</li>
+    </ol>
+
+    <h3 id="vera-path">Draw crash paths</h3>
+    <p>A path shows how a vehicle traveled into (and through) the collision.</p>
+    <ol class="steps">
+      <li>Tap a vehicle on the canvas to select it.</li>
+      <li>Tap <span class="chip">Path</span> to give it a crash path. The path is made of <strong>waypoints</strong>
+          you can drag to trace the route; a path needs at least two.</li>
+      <li>Adjust waypoints to match skid marks, point of impact, and final rest position.</li>
+    </ol>
+    <p>Paths are also what drive playback and the animated GIF — see <a href="#vera-output">Save, PNG &amp; GIF</a>.</p>
+
+    <h3 id="vera-markers">Add scene objects (markers)</h3>
+    <p>
+      Tap <span class="chip">Add Marker</span> (Build mode) to open the <strong>Add Object</strong> sheet.
+      Objects are grouped into three categories so they're quick to scan:
+    </p>
+    <ul class="plain">
+      <li><strong>Traffic Controls</strong> — Stop Sign, Yield, Traffic Light, Speed Limit, One Way, Do Not Enter, No Parking.</li>
+      <li><strong>Warnings</strong> — Merge, Pedestrian Crossing, Construction Zone, Railroad Crossing, Dead End, Detour, School Crossing.</li>
+      <li><strong>Scene Objects</strong> — Impact Point, Fixed Object, Pedestrian.</li>
+    </ul>
+    <p>
+      Each object appears as a tile with an icon and a name. Tap one to drop it on the canvas, then drag it
+      into position. Add as many as you need.
+    </p>
+    <details>
+      <summary>How objects behave on the canvas</summary>
+      <div class="body">
+        Each object is placed, moved, and removed independently of the vehicles. Put them where they actually
+        were at the scene. They stay in canvas space, so they hold their position relative to the vehicles even
+        when you move or zoom the background map.
+      </div>
+    </details>
+
+    <h3 id="vera-cover">Cover panels (hide what doesn't belong)</h3>
+    <p>
+      A live aerial sometimes shows things that aren't part of your scene — parked cars, bystanders' property,
+      unrelated structures. Drop a <strong>cover panel</strong> over that content to hide it. You can resize,
+      rotate, and remove panels (<span class="chip">Remove Cover</span>). Use them to keep the diagram focused
+      on the crash.
+    </p>
+
+    <h3 id="vera-scale">Set the scale &amp; north</h3>
+    <ul class="plain">
+      <li><span class="chip">Scale</span> — opens <strong>Scale Reference</strong>, the real-world distance the
+          scale bar represents (default 50 ft). Set it so distances on the diagram read true.</li>
+      <li><strong>Scene Heading</strong> (compass) — indicate which way is true north when the streets don't run
+          straight up/down on the canvas. This keeps directions in the narrative correct.</li>
+    </ul>
+
+    <h3 id="vera-ai">Generate a draft narrative</h3>
+    <p>
+      Once vehicles and paths are placed, tap <span class="chip">AI Draft</span> to generate a written
+      reconstruction narrative from the scene — directions of travel, sequence, and outcome — which you can
+      apply back into the crash report and edit. It runs on the device; nothing leaves the phone.
+    </p>
+
+    <h3 id="vera-output">Save, PNG snapshot &amp; GIF clip</h3>
+    <table>
+      <tr><th>Action</th><th>What it does</th></tr>
+      <tr><td><span class="chip">Save</span></td><td>Saves the reconstruction to the crash note. The scene image is embedded in the exported crash PDF.</td></tr>
+      <tr><td><span class="chip">PNG</span></td><td>Exports a high-resolution still (about 1200&nbsp;px wide) of the diagram through the share sheet — crisp enough for a court exhibit. Saved on the device, named from the case number when one is set.</td></tr>
+      <tr><td><span class="chip">GIF</span></td><td>Records an animated clip of the vehicles moving along their paths — about 6 frames per second, up to ~400&nbsp;px wide. Kept deliberately light so it stays small to share and plays anywhere. Needs at least one vehicle path. Saved on the device and shared through the share sheet.</td></tr>
+      <tr><td><span class="chip">Play</span></td><td>Plays the reconstruction on screen so you can review the sequence before recording. Pause and Restart are available during playback; adjust the speed with the seconds control.</td></tr>
+    </table>
+    <div class="warn">
+      <b>No paths, no motion.</b> The GIF and Play replay vehicle <em>paths</em>. If a vehicle has no path, it
+      sits still in the clip — draw paths first for anything you want to see move.
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <h2 id="walkthrough">Part 3 · Full walkthrough</h2>
+    <p>A complete pass, using a common situation: a crash reported at an intersection you're not standing at.</p>
+    <ol class="steps">
+      <li><strong>Start the crash report.</strong> Enter the case number, date, and time.</li>
+      <li><strong>Set a reference location.</strong> The complainant says it happened at E 33rd St &amp;
+          Greenmount Ave, Baltimore, MD 21218. Type that into <em>Street Address / Scene Reference</em> and tap
+          <span class="chip">Load Map from Address</span>.</li>
+      <li><strong>Add the vehicles.</strong> Add each unit, with type, plate, and damage notes, and mark the
+          points of impact on each vehicle's diagram.</li>
+      <li><strong>Open V.E.R.A.</strong> from Reconstruction &amp; Narrative.</li>
+      <li><strong>Sync</strong> to pull your vehicles onto the canvas.</li>
+      <li><strong>Move Map</strong> (Photo mode) so the real intersection sits under your silhouettes. Dragged
+          too far? Tap <span class="chip">Recenter</span> and try again. Tap Done to lock it.</li>
+      <li><strong>Place &amp; aim</strong> each vehicle at its resting spot, rotated to its direction of travel.</li>
+      <li><strong>Draw paths</strong> for each moving unit — select the vehicle, tap Path, drag the waypoints.</li>
+      <li><strong>Add markers</strong> for signs, signals, and debris; drop <strong>cover panels</strong> over
+          anything unrelated.</li>
+      <li><strong>Set Scale and north</strong> so distances and directions read true.</li>
+      <li><strong>Play</strong> to review, then <strong>AI Draft</strong> for a narrative, and
+          <strong>Save</strong>.</li>
+      <li><strong>Export the crash PDF.</strong> Your reconstruction is embedded, and the location now reflects
+          the actual crash spot you dragged to — not your reference. Optionally export a <strong>PNG</strong> or
+          <strong>GIF</strong> too.</li>
+    </ol>
+
+    <h2 id="toolref">V.E.R.A. tool reference</h2>
+    <table>
+      <tr><th>Tool</th><th>Mode</th><th>What it does</th></tr>
+      <tr><td><span class="chip">Sync</span></td><td>Build</td><td>Pull vehicles from the crash report onto the canvas.</td></tr>
+      <tr><td><span class="chip">Path</span></td><td>Build</td><td>Add/remove a crash path on the selected vehicle (waypoints, min 2).</td></tr>
+      <tr><td><span class="chip">Add Marker</span></td><td>Build</td><td>Drop a scene object — Stop Sign, Traffic Light, Impact Point, Fixed Object, Pedestrian, and more.</td></tr>
+      <tr><td><span class="chip">Scale</span></td><td>Build</td><td>Set the real-world distance the scale bar represents.</td></tr>
+      <tr><td><span class="chip">Snap On/Off</span></td><td>Build</td><td>Toggle grid snapping while positioning.</td></tr>
+      <tr><td><span class="chip">AI Draft</span></td><td>Build</td><td>Generate a narrative from the scene; apply it to the report.</td></tr>
+      <tr><td><span class="chip">Reset</span></td><td>Build</td><td>Clear the scene (asks to confirm).</td></tr>
+      <tr><td><span class="chip">Move Map</span></td><td>Photo</td><td>Pan the background map under the silhouettes.</td></tr>
+      <tr><td><span class="chip">Recenter</span></td><td>Photo</td><td>Snap the map back to the report's original location.</td></tr>
+      <tr><td><span class="chip">Diagram / Street Map</span></td><td>Photo</td><td>Toggle plain diagram vs live map.</td></tr>
+      <tr><td><span class="chip">Save</span></td><td>Both</td><td>Save the scene to the crash note (embeds in PDF).</td></tr>
+      <tr><td><span class="chip">PNG</span></td><td>Both</td><td>Export a still snapshot.</td></tr>
+      <tr><td><span class="chip">GIF</span></td><td>Both</td><td>Record an animated clip of the paths.</td></tr>
+      <tr><td><span class="chip">Play</span></td><td>Both</td><td>Replay the reconstruction on screen.</td></tr>
+    </table>
+
+    <h2 id="trouble">Troubleshooting</h2>
+    <details>
+      <summary>The map is blank in V.E.R.A.</summary>
+      <div class="body">No location is set yet. Go back to the report's Location section and use
+        <span class="chip">Use Current Location</span>, <span class="chip">Drop Pin</span>, or
+        <span class="chip">Load Map from Address</span> first.</div>
+    </details>
+    <details>
+      <summary>I dragged the map too far and can't find the crash site.</summary>
+      <div class="body">Tap <span class="chip">Recenter</span> in Photo mode to jump back to where the map
+        started, then pan again.</div>
+    </details>
+    <details>
+      <summary>My vehicles aren't on the canvas.</summary>
+      <div class="body">Tap <span class="chip">Sync</span> in Build mode. Make sure you added the vehicles in
+        the crash report first.</div>
+    </details>
+    <details>
+      <summary>The GIF doesn't show vehicles moving.</summary>
+      <div class="body">Give each moving vehicle a <span class="chip">Path</span>. Vehicles without a path stay
+        still during playback and in the clip.</div>
+    </details>
+    <details>
+      <summary>The location on my report didn't change after I dragged the map.</summary>
+      <div class="body">The update happens when you <span class="chip">Save</span> the reconstruction. Save the
+        scene, then check the Location section.</div>
+    </details>
+
+    <div class="divider"></div>
+    <footer>
+      Questions: <a href="mailto:support@bluelinenote.app">support@bluelinenote.app</a> · BlueLineNote
+    </footer>
+  </div>
+  </main>
+
+</div>
+</body>
+</html>
