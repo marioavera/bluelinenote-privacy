@@ -204,6 +204,7 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <a class="sub" href="#vera-what">What V.E.R.A. is</a>
     <a class="sub" href="#vera-open">Open &amp; the two modes</a>
     <a class="sub" href="#vera-map">The map &amp; Recenter</a>
+    <a class="sub" href="#vera-zoom">Zoom Street View</a>
     <a class="sub" href="#vera-sync">Sync vehicles</a>
     <a class="sub" href="#vera-place">Place &amp; aim vehicles</a>
     <a class="sub" href="#vera-path">Crash paths</a>
@@ -247,11 +248,12 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <p>There's no autosave — tap <strong>Save</strong> to store the report. A <strong>case number</strong> is required before it can be saved. Once saved, reopen it any time from <strong>Saved Reports</strong> to keep editing.</p>
 
     <h3 id="location">Set the crash location</h3>
-    <p>The Location section drives the aerial map in V.E.R.A., so set it before you reconstruct. You have two ways:</p>
+    <p>The Location section drives the aerial map in V.E.R.A., so set it before you reconstruct. You have a few ways:</p>
     <table>
       <tr><th>Option</th><th>Use it when…</th></tr>
       <tr><td><span class="chip">Use Current Location</span></td><td>You're standing at the scene. It reads GPS and fills the address automatically.</td></tr>
       <tr><td><span class="chip">Drop Pin on Map</span></td><td>You already know the exact latitude/longitude and want to type them in.</td></tr>
+      <tr><td><span class="chip">Load Map from Address</span></td><td>You're not at the scene but know the street or intersection — type it in the Street Address field, then tap this to drop the map on that spot.</td></tr>
     </table>
     <div class="tip">
       <b>You don't have to be perfectly accurate here.</b> When you drag the aerial in V.E.R.A. to the real
@@ -303,7 +305,7 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <p>The toolbar has two working modes — switch with the mode chips:</p>
     <ul class="plain">
       <li><span class="chip">Build</span> — add and arrange the scene: vehicles, paths, markers, scale, north.</li>
-      <li><span class="chip">Photo</span> — work with the background map: move it, recenter it, or switch between the live street map and a plain diagram.</li>
+      <li><span class="chip">Photo</span> — work with the background map: move it, recenter it, zoom it to street scale, or switch between the live street map and a plain diagram.</li>
     </ul>
     <p><span class="chip">Save</span> stays pinned at the bottom in both modes, one tap away.</p>
 
@@ -323,6 +325,25 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <div class="tip">
       <b>Why this matters:</b> when you Move Map to the real crash location and save, the report's GPS and
       address update to that spot automatically. You reconstruct and fix the location in one motion.
+    </div>
+
+    <h3 id="vera-zoom">Zoom Street View</h3>
+    <p>
+      The vehicle silhouettes are a fixed size, so on the default map they can look too big for the road —
+      two cars won't sit side by side in a lane the way they would in real life.
+      <span class="chip">Zoom Street View</span> (Photo mode) magnifies the street map so the silhouettes
+      match the real scale of the street. Tap it once to zoom in; the button changes to
+      <span class="chip">Normal View</span> to switch back.
+    </p>
+    <ul class="plain">
+      <li>Turn it on after you've positioned the crash site, so the road fills the canvas and your vehicles
+          sit in proportion to the lanes.</li>
+      <li>You can still <strong>drag the map</strong> while zoomed in to fine-tune where the crash sits under
+          the silhouettes.</li>
+    </ul>
+    <div class="tip">
+      <b>It sticks.</b> Zoom Street View is saved with the crash report. Reopen the record later and the
+      reconstruction comes back at the same zoom you left it on.
     </div>
 
     <h3 id="vera-sync">Sync vehicles from the report</h3>
@@ -416,6 +437,8 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
       <li><strong>Sync</strong> to pull your vehicles onto the canvas.</li>
       <li><strong>Move Map</strong> (Photo mode) so the real intersection sits under your silhouettes. Dragged
           too far? Tap <span class="chip">Recenter</span> and try again. Tap Done to lock it.</li>
+      <li><strong>Zoom to street scale</strong> (optional). Tap <span class="chip">Zoom Street View</span> so the
+          road fills the canvas and your vehicles sit in proportion to the lanes — you can still drag while zoomed.</li>
       <li><strong>Place &amp; aim</strong> each vehicle at its resting spot, rotated to its direction of travel.</li>
       <li><strong>Draw paths</strong> for each moving unit — select the vehicle, tap Path, drag the waypoints.</li>
       <li><strong>Add markers</strong> for traffic controls, warnings, and scene objects (Fixed Object, Pedestrian, Impact Point).</li>
@@ -440,6 +463,7 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
       <tr><td><span class="chip">Move Map</span></td><td>Photo</td><td>Pan the background map under the silhouettes.</td></tr>
       <tr><td><span class="chip">Recenter</span></td><td>Photo</td><td>Snap the map back to the report's original location.</td></tr>
       <tr><td><span class="chip">Diagram / Street Map</span></td><td>Photo</td><td>Toggle plain diagram vs live map.</td></tr>
+      <tr><td><span class="chip">Zoom Street View</span></td><td>Photo</td><td>Magnify the street map so vehicle silhouettes match real street scale. Saved with the report.</td></tr>
       <tr><td><span class="chip">Save</span></td><td>Both</td><td>Save the scene to the crash note (embeds in PDF).</td></tr>
       <tr><td><span class="chip">PNG</span></td><td>Both</td><td>Export a still snapshot.</td></tr>
       <tr><td><span class="chip">GIF</span></td><td>Both</td><td>Record an animated clip of the paths.</td></tr>
@@ -456,6 +480,11 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
       <summary>I dragged the map too far and can't find the crash site.</summary>
       <div class="body">Tap <span class="chip">Recenter</span> in Photo mode to jump back to where the map
         started, then pan again.</div>
+    </details>
+    <details>
+      <summary>The vehicles look too big for the street.</summary>
+      <div class="body">Switch on <span class="chip">Zoom Street View</span> in Photo mode. It magnifies the
+        street map so the fixed-size silhouettes sit in proportion to the lanes. The setting is saved with the report.</div>
     </details>
     <details>
       <summary>My vehicles aren't on the canvas.</summary>
