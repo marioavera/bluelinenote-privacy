@@ -208,7 +208,6 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <a class="sub" href="#vera-place">Place &amp; aim vehicles</a>
     <a class="sub" href="#vera-path">Crash paths</a>
     <a class="sub" href="#vera-markers">Scene objects</a>
-    <a class="sub" href="#vera-cover">Cover panels</a>
     <a class="sub" href="#vera-scale">Scale &amp; north</a>
     <a class="sub" href="#vera-ai">AI draft narrative</a>
     <a class="sub" href="#vera-output">Save, PNG &amp; GIF</a>
@@ -268,6 +267,11 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
       <li>Add pedestrians the same way if any were involved.</li>
     </ol>
     <p>The labels (Vehicle 1, Vehicle 2…) are what V.E.R.A. uses when it syncs the units onto the canvas, so they carry straight through.</p>
+    <div class="tip">
+      <b>Not every crash is car-to-car.</b> A single vehicle striking a <strong>fixed object</strong>, or a crash
+      involving <strong>pedestrians</strong>, are fully supported — represent the fixed object or the pedestrian
+      with the matching <a href="#vera-markers">Scene Objects markers</a> (Fixed Object, Pedestrian) in V.E.R.A.
+    </div>
 
     <h3 id="impact">Mark impact &amp; damage</h3>
     <p>
@@ -370,14 +374,6 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
       </div>
     </details>
 
-    <h3 id="vera-cover">Cover panels (hide what doesn't belong)</h3>
-    <p>
-      A live aerial sometimes shows things that aren't part of your scene — parked cars, bystanders' property,
-      unrelated structures. Drop a <strong>cover panel</strong> over that content to hide it. You can resize,
-      rotate, and remove panels (<span class="chip">Remove Cover</span>). Use them to keep the diagram focused
-      on the crash.
-    </p>
-
     <h3 id="vera-scale">Set the scale &amp; north</h3>
     <ul class="plain">
       <li><span class="chip">Scale</span> — opens <strong>Scale Reference</strong>, the real-world distance the
@@ -422,8 +418,7 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
           too far? Tap <span class="chip">Recenter</span> and try again. Tap Done to lock it.</li>
       <li><strong>Place &amp; aim</strong> each vehicle at its resting spot, rotated to its direction of travel.</li>
       <li><strong>Draw paths</strong> for each moving unit — select the vehicle, tap Path, drag the waypoints.</li>
-      <li><strong>Add markers</strong> for signs, signals, and debris; drop <strong>cover panels</strong> over
-          anything unrelated.</li>
+      <li><strong>Add markers</strong> for traffic controls, warnings, and scene objects (Fixed Object, Pedestrian, Impact Point).</li>
       <li><strong>Set Scale and north</strong> so distances and directions read true.</li>
       <li><strong>Play</strong> to review, then <strong>AI Draft</strong> for a narrative, and
           <strong>Save</strong>.</li>
