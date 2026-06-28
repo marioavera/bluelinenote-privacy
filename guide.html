@@ -241,19 +241,18 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <h2 id="start">Part 1 · Start a crash report</h2>
     <ol class="steps">
       <li>From the dashboard, start a new <strong>Crash</strong> report.</li>
-      <li>Fill the top fields as you normally would: case / complaint number, date, and time.</li>
+      <li>Fill the top fields: <strong>case / complaint number</strong> (required to save the report), date, and time.</li>
       <li>Work down the sections — Location, Vehicles &amp; Pedestrians, narrative, and signatures. You can
           leave V.E.R.A. for last; it pulls vehicle data from the report automatically.</li>
     </ol>
-    <p>Everything autosaves as you go. You can close the report and return to it later without losing work.</p>
+    <p>There's no autosave — tap <strong>Save</strong> to store the report. A <strong>case number</strong> is required before it can be saved. Once saved, reopen it any time from <strong>Saved Reports</strong> to keep editing.</p>
 
     <h3 id="location">Set the crash location</h3>
-    <p>The Location section drives the aerial map in V.E.R.A., so set it before you reconstruct. You have three ways:</p>
+    <p>The Location section drives the aerial map in V.E.R.A., so set it before you reconstruct. You have two ways:</p>
     <table>
       <tr><th>Option</th><th>Use it when…</th></tr>
       <tr><td><span class="chip">Use Current Location</span></td><td>You're standing at the scene. It reads GPS and fills the address automatically.</td></tr>
       <tr><td><span class="chip">Drop Pin on Map</span></td><td>You already know the exact latitude/longitude and want to type them in.</td></tr>
-      <tr><td><span class="chip">Load Map from Address</span></td><td>You're <strong>not</strong> at the scene — e.g. a complainant reported a cross street. Type the street or intersection in <em>Street Address / Scene Reference</em>, then tap this. The map loads there so you can drag to the exact spot in V.E.R.A.</td></tr>
     </table>
     <div class="tip">
       <b>You don't have to be perfectly accurate here.</b> When you drag the aerial in V.E.R.A. to the real
@@ -272,9 +271,16 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
 
     <h3 id="impact">Mark impact &amp; damage</h3>
     <p>
-      Each vehicle has an <strong>impact diagram</strong> — a top-down outline of the vehicle. Tap the points
-      on the outline where the vehicle was struck or damaged. This records the points of impact for the report
-      and gives you a quick visual the reconstruction can build on.
+      Each vehicle has an <strong>impact diagram</strong> — a top-down outline of the vehicle. Use it to show
+      where the vehicle was struck:
+    </p>
+    <ul class="plain">
+      <li><strong>Tap</strong> a spot on the outline to mark an impact area there.</li>
+      <li><strong>Press and hold</strong> a marked area to delete it — or clear all of them to start over.</li>
+    </ul>
+    <p>
+      Add <strong>Damage Notes</strong> in the field above the diagram to describe the damage in words. Together
+      these record the points of impact for the report.
     </p>
 
     <!-- ============================ PART 2 ============================ -->
@@ -402,12 +408,12 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
 
     <!-- ============================ PART 3 ============================ -->
     <h2 id="walkthrough">Part 3 · Full walkthrough</h2>
-    <p>A complete pass, using a common situation: a crash reported at an intersection you're not standing at.</p>
+    <p>A complete pass through a typical crash.</p>
     <ol class="steps">
       <li><strong>Start the crash report.</strong> Enter the case number, date, and time.</li>
-      <li><strong>Set a reference location.</strong> The complainant says it happened at E 33rd St &amp;
-          Greenmount Ave, Baltimore, MD 21218. Type that into <em>Street Address / Scene Reference</em> and tap
-          <span class="chip">Load Map from Address</span>.</li>
+      <li><strong>Set the location.</strong> At the scene, tap <span class="chip">Use Current Location</span> —
+          it reads GPS and fills the address. (Not on scene? Use <span class="chip">Drop Pin on Map</span> if you
+          have the coordinates.) You can fine-tune the exact spot when you drag the map in V.E.R.A.</li>
       <li><strong>Add the vehicles.</strong> Add each unit, with type, plate, and damage notes, and mark the
           points of impact on each vehicle's diagram.</li>
       <li><strong>Open V.E.R.A.</strong> from Reconstruction &amp; Narrative.</li>
@@ -421,8 +427,8 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
       <li><strong>Set Scale and north</strong> so distances and directions read true.</li>
       <li><strong>Play</strong> to review, then <strong>AI Draft</strong> for a narrative, and
           <strong>Save</strong>.</li>
-      <li><strong>Export the crash PDF.</strong> Your reconstruction is embedded, and the location now reflects
-          the actual crash spot you dragged to — not your reference. Optionally export a <strong>PNG</strong> or
+      <li><strong>Export the crash PDF.</strong> Your reconstruction is embedded, and the location reflects the
+          actual crash spot you dragged to in V.E.R.A. Optionally export a <strong>PNG</strong> or
           <strong>GIF</strong> too.</li>
     </ol>
 
@@ -449,8 +455,7 @@ footer { color: var(--muted); font-size: .9rem; margin-top: 30px; }
     <details>
       <summary>The map is blank in V.E.R.A.</summary>
       <div class="body">No location is set yet. Go back to the report's Location section and use
-        <span class="chip">Use Current Location</span>, <span class="chip">Drop Pin</span>, or
-        <span class="chip">Load Map from Address</span> first.</div>
+        <span class="chip">Use Current Location</span> or <span class="chip">Drop Pin</span> first.</div>
     </details>
     <details>
       <summary>I dragged the map too far and can't find the crash site.</summary>
