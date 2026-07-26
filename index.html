@@ -5,143 +5,244 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | BlueLineNote</title>
 <meta name="description" content="BlueLineNote privacy policy — your reports, notes, and scans stay on your device. No cloud storage, no developer access.">
-<meta name="theme-color" content="#f6f3ec">
+<meta name="theme-color" content="#f4efe4">
 <meta name="robots" content="noindex, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700;900&family=JetBrains+Mono:wght@400;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
---paper:#f6f3ec;
---paper2:#fdfcf8;
---ink:#101c2c;
---ink-soft:#3d4a5c;
---ink-faint:#8a93a1;
---rule:#c9c3b4;
---blue:#1a4fd6;
---blue-soft:#e8edfb;
---green:#1c7a43;
---shadow:6px 6px 0 var(--ink);
---shadow-sm:4px 4px 0 var(--ink);
+  --paper:#f4efe4;
+  --paper-2:#fbf8f2;
+  --sand:#e8dfcd;
+  --rule:#e2d9c8;
+  --ink:#17130f;
+  --muted:#6b6259;
+  --copper:#b26b36;
+  --copper-dark:#8f5227;
+  --copper-tint:#f6ece2;
+  --radius:14px;
+  --radius-lg:20px;
+  --shadow:0 24px 50px -30px rgba(23,19,15,0.45);
+  --shadow-sm:0 10px 24px -18px rgba(23,19,15,0.5);
 }
+
 *{box-sizing:border-box;}
+
+html{-webkit-text-size-adjust:100%;}
+
 body{
-margin:0;
-font-family:'Public Sans',-apple-system,BlinkMacSystemFont,sans-serif;
-background:var(--paper);
-background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,rgba(16,28,44,0.035) 31px,rgba(16,28,44,0.035) 32px);
-color:var(--ink);
-line-height:1.6;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
 }
-.container{max-width:860px;margin:0 auto;padding:70px 20px;}
-.card{
-background:var(--paper2);
-border:2px solid var(--ink);
-padding:44px;
-box-shadow:var(--shadow);
+
+.wrap{
+  max-width:760px;
+  margin:0 auto;
+  padding:44px 22px 90px;
 }
+
+/* ---------- back link ---------- */
+
+.back{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  text-decoration:none;
+  color:var(--muted);
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:9px 18px 9px 15px;
+  font-size:0.86rem;
+  font-weight:700;
+  letter-spacing:0.01em;
+  box-shadow:var(--shadow-sm);
+  transition:color .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.back:hover{color:var(--ink);border-color:var(--sand);transform:translateY(-1px);}
+.back:focus-visible{outline:2px solid var(--copper);outline-offset:3px;}
+.back .arrow{color:var(--copper);font-weight:800;}
+
+/* ---------- header ---------- */
+
+header{
+  margin-top:40px;
+  padding-bottom:34px;
+  border-bottom:1px solid var(--rule);
+}
+
+.eyebrow{
+  color:var(--copper-dark);
+  font-size:0.74rem;
+  font-weight:800;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  margin:0 0 14px;
+}
+
 h1{
-font-family:'Saira Condensed',sans-serif;
-font-weight:900;
-text-transform:uppercase;
-margin:0 0 6px;
-font-size:clamp(34px,6vw,48px);
-line-height:.98;
-letter-spacing:.5px;
+  font-family:"Manrope",sans-serif;
+  font-weight:800;
+  font-size:clamp(2.4rem,7vw,3.4rem);
+  letter-spacing:-0.045em;
+  line-height:1.03;
+  margin:0;
 }
+
 .updated{
-font-family:'JetBrains Mono',monospace;
-font-size:12px;
-font-weight:700;
-letter-spacing:.08em;
-text-transform:uppercase;
-color:var(--ink-faint);
-margin-bottom:8px;
+  display:inline-block;
+  margin-top:18px;
+  padding:5px 12px;
+  border-radius:999px;
+  background:var(--copper-tint);
+  color:var(--copper-dark);
+  font-size:0.76rem;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
 }
+
+/* ---------- sections ---------- */
+
+section{
+  padding-top:40px;
+}
+
 h2{
-font-family:'Saira Condensed',sans-serif;
-font-weight:900;
-text-transform:uppercase;
-font-size:22px;
-letter-spacing:.5px;
-margin:34px 0 10px;
-padding-top:22px;
-border-top:2px solid var(--ink);
+  font-family:"DM Sans",sans-serif;
+  font-weight:700;
+  font-size:1.24rem;
+  letter-spacing:-0.015em;
+  line-height:1.3;
+  margin:0 0 14px;
 }
-p{font-size:15px;line-height:1.75;color:var(--ink-soft);margin:0 0 14px;}
-.back-link{
-display:inline-block;
-margin-bottom:24px;
-text-decoration:none;
-color:var(--ink);
-font-family:'JetBrains Mono',monospace;
-font-weight:700;
-font-size:13px;
-text-transform:uppercase;
-letter-spacing:.06em;
-border:2px solid var(--ink);
-padding:10px 16px;
-background:var(--paper2);
-box-shadow:var(--shadow-sm);
-transition:transform .15s ease;
+
+p{
+  margin:0 0 16px;
+  color:var(--muted);
+  font-size:1.02rem;
 }
-.back-link:hover{transform:translate(-2px,-2px);}
+
+p:last-child{margin-bottom:0;}
+
+/* the lead section carries the whole policy in one idea — give it weight */
+
+.lead{
+  margin-top:34px;
+  padding:30px 32px;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-left:3px solid var(--copper);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+}
+
+.lead h2{font-size:1.4rem;}
+.lead p{color:var(--ink);}
+
+/* ---------- contact ---------- */
+
 .contact{
-margin-top:30px;
-font-family:'JetBrains Mono',monospace;
-font-weight:700;
-font-size:14px;
-border:2px solid var(--ink);
-border-left:8px solid var(--blue);
-background:var(--blue-soft);
-padding:14px 16px;
+  margin-top:52px;
+  padding:24px 28px;
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:var(--radius);
+  font-size:0.98rem;
+  font-weight:600;
+  color:var(--muted);
 }
-.contact a{color:var(--blue);text-decoration:none;font-weight:700;}
-.contact a:hover{text-decoration:underline;}
+
+.contact a{
+  color:var(--copper-dark);
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid rgba(178,107,54,0.35);
+}
+
+.contact a:hover{border-bottom-color:var(--copper);}
+.contact a:focus-visible{outline:2px solid var(--copper);outline-offset:3px;}
+
 @media (max-width:600px){
-.card{padding:28px;}
+  body{font-size:16px;}
+  .wrap{padding:30px 18px 70px;}
+  .lead{padding:24px 22px;}
+  .contact{padding:20px 22px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;}
 }
 </style>
 </head>
 <body>
-<div class="container">
-<div class="card">
-<a href="https://bluelinenote.app" class="back-link">← Back to BlueLineNote</a>
-<h1>Privacy Policy</h1>
-<p class="updated">Last updated: June 2026</p>
+<div class="wrap">
 
-<h2>Your reports stay on your device</h2>
-<p>All reports, notes, scans, and other content you enter into BlueLineNote remain on your device and are never transmitted to the developer or any external server. The developer does not have access to your notes, reports, scans, or any content you create in the app. BlueLineNote does not provide cloud storage or remote databases for your content.</p>
+<a href="https://bluelinenote.app" class="back"><span class="arrow">←</span> Back to BlueLineNote</a>
 
-<h2>Backup &amp; Restore</h2>
-<p>You can create a password-protected backup of your saved records and scans. The backup is a single encrypted file, locked with a password that only you know — the developer cannot open it. You choose where to save it (your own Files, your own cloud storage, or email) using your device's share sheet, and you restore by selecting that file. Backup files are never sent to or stored by the developer.</p>
+<header>
+  <p class="eyebrow">BlueLineNote</p>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: June 2026</p>
+</header>
 
-<h2>Licensing and feature limits</h2>
-<p>To validate Pro purchases, activate agency seats, and enforce free-tier usage limits, the app sends a device identifier — and, for metered features, a count of how many times those features have been used — to the developer's server (api.bluelinenote.app).</p>
-<p>This information is used only to operate the free, Pro, and agency licensing. It contains no personal information and none of your report content, and it is never sold or shared with advertisers or other third parties for advertising or tracking.</p>
+<section class="lead">
+  <h2>Your reports stay on your device</h2>
+  <p>All reports, notes, scans, and other content you enter into BlueLineNote remain on your device and are never transmitted to the developer or any external server. The developer does not have access to your notes, reports, scans, or any content you create in the app. BlueLineNote does not provide cloud storage or remote databases for your content.</p>
+</section>
 
-<h2>Anonymous usage analytics</h2>
-<p>The app collects a small amount of optional anonymous usage data — for example, which features are opened, how long the app is used, your subscription type, device model, operating system version, and app version. This data is not linked to your identity, contains no personal information and none of your report content, and is identified only by a random value that resets if the app is reinstalled. It is not sold or shared with advertisers. You can turn it off at any time under Backup &amp; Restore → Anonymous Usage.</p>
+<section>
+  <h2>Backup &amp; Restore</h2>
+  <p>You can create a password-protected backup of your saved records and scans. The backup is a single encrypted file, locked with a password that only you know — the developer cannot open it. You choose where to save it (your own Files, your own cloud storage, or email) using your device's share sheet, and you restore by selecting that file. Backup files are never sent to or stored by the developer.</p>
+</section>
 
-<h2>Legal requests</h2>
-<p>We may disclose the limited information we hold if required by law or in response to a valid legal request, and we cooperate with lawful requests from authorities. That information is limited to a randomly generated device identifier and licensing or usage records — it is not your name, account, or any personal identifier. Your reports, notes, and scans remain on your device, are never transmitted to us, and are not accessible to us — we cannot produce that content.</p>
+<section>
+  <h2>Licensing and feature limits</h2>
+  <p>To validate Pro purchases, activate agency seats, and enforce free-tier usage limits, the app sends a device identifier — and, for metered features, a count of how many times those features have been used — to the developer's server (api.bluelinenote.app).</p>
+  <p>This information is used only to operate the free, Pro, and agency licensing. It contains no personal information and none of your report content, and it is never sold or shared with advertisers or other third parties for advertising or tracking.</p>
+</section>
 
-<h2>Data retention</h2>
-<p>We keep the limited licensing and anonymous usage data described above only as long as needed to operate the free, Pro, and agency licensing and to keep the service working. Because this data is tied only to a random identifier and contains no personal information, it is not linked to you. You can stop analytics collection at any time under Backup &amp; Restore → Anonymous Usage.</p>
+<section>
+  <h2>Anonymous usage analytics</h2>
+  <p>The app collects a small amount of optional anonymous usage data — for example, which features are opened, how long the app is used, your subscription type, device model, operating system version, and app version. This data is not linked to your identity, contains no personal information and none of your report content, and is identified only by a random value that resets if the app is reinstalled. It is not sold or shared with advertisers. You can turn it off at any time under Backup &amp; Restore → Anonymous Usage.</p>
+</section>
 
-<h2>Security</h2>
-<p>We use reasonable measures to protect the limited data we collect in transit to and on our server. No method of transmission or storage is perfectly secure, but because your reports, notes, and scans never leave your device, the most sensitive information you create is never exposed to us or to anyone in transit.</p>
+<section>
+  <h2>Legal requests</h2>
+  <p>We may disclose the limited information we hold if required by law or in response to a valid legal request, and we cooperate with lawful requests from authorities. That information is limited to a randomly generated device identifier and licensing or usage records — it is not your name, account, or any personal identifier. Your reports, notes, and scans remain on your device, are never transmitted to us, and are not accessible to us — we cannot produce that content.</p>
+</section>
 
-<h2>Platform services</h2>
-<p>The app uses platform services such as in-app purchases and speech recognition. Depending on your device, these are handled by Apple or Google under their own privacy policies.</p>
+<section>
+  <h2>Data retention</h2>
+  <p>We keep the limited licensing and anonymous usage data described above only as long as needed to operate the free, Pro, and agency licensing and to keep the service working. Because this data is tied only to a random identifier and contains no personal information, it is not linked to you. You can stop analytics collection at any time under Backup &amp; Restore → Anonymous Usage.</p>
+</section>
 
-<h2>Your responsibility</h2>
-<p>You are responsible for securing your device and for how you store, manage, and use any information you enter into the app. You are also responsible for following your department's or company's policies, procedures, and applicable laws governing the documentation, handling, retention, and sharing of any information you record using BlueLineNote.</p>
+<section>
+  <h2>Security</h2>
+  <p>We use reasonable measures to protect the limited data we collect in transit to and on our server. No method of transmission or storage is perfectly secure, but because your reports, notes, and scans never leave your device, the most sensitive information you create is never exposed to us or to anyone in transit.</p>
+</section>
+
+<section>
+  <h2>Platform services</h2>
+  <p>The app uses platform services such as in-app purchases and speech recognition. Depending on your device, these are handled by Apple or Google under their own privacy policies.</p>
+</section>
+
+<section>
+  <h2>Your responsibility</h2>
+  <p>You are responsible for securing your device and for how you store, manage, and use any information you enter into the app. You are also responsible for following your department's or company's policies, procedures, and applicable laws governing the documentation, handling, retention, and sharing of any information you record using BlueLineNote.</p>
+</section>
 
 <p class="contact">Contact: <a href="mailto:support@bluelinenote.app">support@bluelinenote.app</a></p>
-</div>
+
 </div>
 </body>
 </html>
