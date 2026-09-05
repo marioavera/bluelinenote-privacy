@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | BlueLineNote</title>
-<meta name="description" content="BlueLineNote privacy policy — your reports, notes, and scans stay on your device. No cloud storage, no developer access.">
+<title>Privacy Policy | BlueLineNote LLC</title>
+<meta name="description" content="Privacy policy for BlueLineNote and Investigator Suite — your reports, notes, and scans stay on your device. No cloud storage, no developer access.">
 <meta name="theme-color" content="#f4efe4">
 <meta name="robots" content="noindex, follow">
 
@@ -111,6 +111,12 @@ h1{
   text-transform:uppercase;
 }
 
+.scope{
+  margin-top:16px;
+  color:var(--muted);
+  font-size:0.98rem;
+}
+
 /* ---------- sections ---------- */
 
 section{
@@ -133,6 +139,20 @@ p{
 }
 
 p:last-child{margin-bottom:0;}
+
+.app-tag{
+  display:inline-block;
+  margin-right:8px;
+  padding:2px 9px;
+  border-radius:999px;
+  background:var(--copper-tint);
+  color:var(--copper-dark);
+  font-size:0.7rem;
+  font-weight:800;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  vertical-align:2px;
+}
 
 /* the lead section carries the whole policy in one idea — give it weight */
 
@@ -190,55 +210,88 @@ p:last-child{margin-bottom:0;}
 <a href="https://bluelinenote.app" class="back"><span class="arrow">←</span> Back to BlueLineNote</a>
 
 <header>
-  <p class="eyebrow">BlueLineNote</p>
+  <p class="eyebrow">BlueLineNote LLC</p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: June 2026</p>
+  <p class="updated">Last updated: September 2026</p>
+  <p class="scope">This policy covers both apps published by BlueLineNote LLC: <strong>BlueLineNote</strong> and <strong>Investigator Suite</strong>. Where a section applies to only one of them, it says so.</p>
 </header>
 
 <section class="lead">
-  <h2>Your reports stay on your device</h2>
-  <p>All reports, notes, scans, and other content you enter into BlueLineNote remain on your device and are never transmitted to the developer or any external server. The developer does not have access to your notes, reports, scans, or any content you create in the app. BlueLineNote does not provide cloud storage or remote databases for your content.</p>
+  <h2>Your case work stays on your device</h2>
+  <p>All reports, notes, case folders, scans, and other content you enter into either app remain on your device and are never transmitted to the developer or any external server. The developer does not have access to your notes, reports, case folders, scans, or any content you create. Neither app provides cloud storage or a remote database for your content, and neither app queries any external database about any person.</p>
+</section>
+
+<section>
+  <h2><span class="app-tag">Investigator Suite</span> Scanned identity documents</h2>
+  <p>The app can read a driver's licence or identification card using your device's camera. The text is recognised entirely on your device by Apple's and Google's on-device machine-learning frameworks. The image and the recognised text are never uploaded, and no recognition happens on any server.</p>
+  <p>What is read — a name, date of birth, identification number, address, or phone number — is always shown to you for correction before it is added to a case folder, and it is stored only in that folder on your device.</p>
+</section>
+
+<section>
+  <h2><span class="app-tag">Investigator Suite</span> Information about other people</h2>
+  <p>Investigator Suite is a documentation tool for professional investigators. You enter and store information about people connected to your own casework — names, photographs, and notes you record yourself.</p>
+  <p>The app does not look anyone up. It performs no search against any public record, database, watchlist, or third-party service, and it does not perform facial recognition or biometric identification of any person. Everything it shows you is something you put there. Any connections it displays between cases are drawn only from names you have entered yourself, on your own device.</p>
+  <p>You are responsible for having a lawful basis to record and retain information about other people, and for following the rules of your agency, licence, or jurisdiction.</p>
 </section>
 
 <section>
   <h2>Backup &amp; Restore</h2>
-  <p>You can create a password-protected backup of your saved records and scans. The backup is a single encrypted file, locked with a password that only you know — the developer cannot open it. You choose where to save it (your own Files, your own cloud storage, or email) using your device's share sheet, and you restore by selecting that file. Backup files are never sent to or stored by the developer.</p>
+  <p>You can create a password-protected backup of your saved records, case folders, and images. The backup is a single encrypted file, locked with a password that only you know — the developer cannot open it. You choose where to save it (your own Files, your own cloud storage, or email) using your device's share sheet, and you restore by selecting that file. Backup files are never sent to or stored by the developer.</p>
+</section>
+
+<section>
+  <h2><span class="app-tag">Investigator Suite</span> App lock</h2>
+  <p>You can require Face ID, Touch ID, or your device passcode to open the app. Authentication is performed entirely by your device's operating system. The app is told only whether the check succeeded — it never receives, stores, or transmits your face, fingerprint, or passcode.</p>
 </section>
 
 <section>
   <h2>Licensing and feature limits</h2>
-  <p>To validate Pro purchases, activate agency seats, and enforce free-tier usage limits, the app sends a device identifier — and, for metered features, a count of how many times those features have been used — to the developer's server (api.bluelinenote.app).</p>
-  <p>This information is used only to operate the free, Pro, and agency licensing. It contains no personal information and none of your report content, and it is never sold or shared with advertisers or other third parties for advertising or tracking.</p>
+  <p>To validate purchases, activate agency seats, and enforce free-tier usage limits, the apps send a device identifier — and, for metered features, a count of how many times those features have been used — to the developer's server (api.bluelinenote.app).</p>
+  <p>This identifier is deliberately durable: on Android it is derived from a system value and on iOS it is stored in the device keychain, so it survives deleting and reinstalling the app. That is what keeps a free-use allowance from resetting on reinstall. It is a random or system-assigned value only. It is not your name, email, account, phone number, or advertising identifier, and it cannot be used to identify you.</p>
+  <p>This information is used only to operate the free, paid, and agency licensing. It contains no personal information and none of your case content, and it is never sold or shared with advertisers or other third parties for advertising or tracking.</p>
 </section>
 
 <section>
   <h2>Anonymous usage analytics</h2>
-  <p>The app collects a small amount of optional anonymous usage data — for example, which features are opened, how long the app is used, your subscription type, device model, operating system version, and app version. This data is not linked to your identity, contains no personal information and none of your report content, and is identified only by a random value that resets if the app is reinstalled. It is not sold or shared with advertisers. You can turn it off at any time under Backup &amp; Restore → Anonymous Usage.</p>
+  <p>The apps collect a small amount of optional anonymous usage data — for example, which screens are opened, how long each screen is used, time in the app, the language the app is set to, device model, operating system version, and app version. In BlueLineNote this also includes your subscription type.</p>
+  <p>This data is not linked to your identity, contains no personal information and none of your case content — no names, case numbers, photographs, or locations — and is identified only by a random value generated by the app, which resets if the app is reinstalled. It is not used for tracking across other apps or websites, and it is not sold or shared with advertisers.</p>
+  <p>You can turn it off at any time: in Investigator Suite under Settings → Usage analytics, and in BlueLineNote under Backup &amp; Restore → Anonymous Usage. Turning it off changes nothing about how the app works.</p>
 </section>
 
 <section>
   <h2>Legal requests</h2>
-  <p>We may disclose the limited information we hold if required by law or in response to a valid legal request, and we cooperate with lawful requests from authorities. That information is limited to a randomly generated device identifier and licensing or usage records — it is not your name, account, or any personal identifier. Your reports, notes, and scans remain on your device, are never transmitted to us, and are not accessible to us — we cannot produce that content.</p>
+  <p>We may disclose the limited information we hold if required by law or in response to a valid legal request, and we cooperate with lawful requests from authorities. That information is limited to a randomly generated or system-assigned device identifier and licensing or usage records — it is not your name, account, or any personal identifier. Your reports, notes, case folders, and scans remain on your device, are never transmitted to us, and are not accessible to us — we cannot produce that content.</p>
 </section>
 
 <section>
   <h2>Data retention</h2>
-  <p>We keep the limited licensing and anonymous usage data described above only as long as needed to operate the free, Pro, and agency licensing and to keep the service working. Because this data is tied only to a random identifier and contains no personal information, it is not linked to you. You can stop analytics collection at any time under Backup &amp; Restore → Anonymous Usage.</p>
+  <p>We keep the limited licensing and anonymous usage data described above only as long as needed to operate the free, paid, and agency licensing and to keep the service working. Because this data is tied only to a random or system-assigned identifier and contains no personal information, it is not linked to you.</p>
+  <p>Content you create lives only on your device. Deleting the app deletes that content, and deleting an individual case folder, note, or image removes it from the device.</p>
 </section>
 
 <section>
   <h2>Security</h2>
-  <p>We use reasonable measures to protect the limited data we collect in transit to and on our server. No method of transmission or storage is perfectly secure, but because your reports, notes, and scans never leave your device, the most sensitive information you create is never exposed to us or to anyone in transit.</p>
+  <p>We use reasonable measures to protect the limited data we collect in transit to and on our server. No method of transmission or storage is perfectly secure, but because your reports, notes, case folders, and scans never leave your device, the most sensitive information you create is never exposed to us or to anyone in transit.</p>
+</section>
+
+<section>
+  <h2>Children</h2>
+  <p>Neither app is directed to children, and neither is intended for use by anyone under 18. We do not knowingly collect information from children.</p>
 </section>
 
 <section>
   <h2>Platform services</h2>
-  <p>The app uses platform services such as in-app purchases and speech recognition. Depending on your device, these are handled by Apple or Google under their own privacy policies.</p>
+  <p>The apps use platform services such as in-app purchases, speech recognition, on-device text recognition, biometric authentication, location, and the photo library. Depending on your device, these are handled by Apple or Google under their own privacy policies. Each is used only for the purpose described in the permission prompt shown when you first use the feature.</p>
 </section>
 
 <section>
   <h2>Your responsibility</h2>
-  <p>You are responsible for securing your device and for how you store, manage, and use any information you enter into the app. You are also responsible for following your department's or company's policies, procedures, and applicable laws governing the documentation, handling, retention, and sharing of any information you record using BlueLineNote.</p>
+  <p>You are responsible for securing your device and for how you store, manage, and use any information you enter into the apps. You are also responsible for following your department's, agency's, or company's policies and procedures, your professional licensing requirements, and applicable laws governing the documentation, handling, retention, and sharing of any information you record.</p>
+</section>
+
+<section>
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the revised version will be posted on this page with a new date above. Continuing to use either app after a change means you accept the revised policy.</p>
 </section>
 
 <p class="contact">Contact: <a href="mailto:support@bluelinenote.app">support@bluelinenote.app</a></p>
